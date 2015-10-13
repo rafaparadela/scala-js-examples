@@ -1,12 +1,16 @@
+enablePlugins(ScalaJSPlugin)
+
 name := "demo-examples"
 
 version := "1.0"
 
-scalaVersion := "2.11.6"
+scalaVersion := "2.11.7"
 
-enablePlugins(ScalaJSPlugin)
+libraryDependencies += "org.scala-js" %%% "scalajs-dom" % "0.8.2"
 
-libraryDependencies += "org.scala-js" %%% "scalajs-dom" % "0.8.0"
+jsDependencies += RuntimeDOM
 
 scalaJSStage in Global := FastOptStage
+
+persistLauncher := true
 
