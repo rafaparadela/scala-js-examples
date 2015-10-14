@@ -5,8 +5,14 @@
     <title>Demo Examples</title>
 </head>
 <body>
-<script type="text/javascript" src="./target/scala-2.11/demo-examples-jsdeps.js"></script>
+
+<div>
+    <canvas style="display: block" id="canvas" width="255" height="255"/>
+</div>
+
 <script type="text/javascript" src="./target/scala-2.11/demo-examples-fastopt.js"></script>
-<script type="text/javascript" src="./target/scala-2.11/demo-examples-launcher.js"></script>
+<script>
+    com.example.DemoExamples().main(document.getElementById('canvas'));
+</script>
 </body>
 </html>

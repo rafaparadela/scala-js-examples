@@ -1,2 +1,2 @@
-# scala-js-examples
+# Scala-js Examples
 Basic examples of Scala.js for GDG DebFest
