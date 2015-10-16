@@ -1,6 +1,7 @@
 package com.example
 
-import org.scalajs.dom.raw.HTMLCanvasElement
+
+import Math._
 import scala.scalajs.js.annotation.JSExport
 import org.scalajs.dom
 import org.scalajs.dom.{CanvasRenderingContext2D, html}
@@ -15,8 +16,13 @@ object DemoExamples  {
   }
 
   def drawStuff(ctx: CanvasRenderingContext2D) {
-    ctx.fillStyle = "#FF9900"
-    ctx.fillRect(0, 0, 30, 30)
+    var x = 0.0
+
+    dom.setInterval(() => {
+      x = x + 1
+      ctx.fillStyle = "#FF9900"
+      ctx.fillRect(x, 100, 30, 30)
+    }, 10)
   }
 
   def resizeCanvas(ctx: CanvasRenderingContext2D) = {
