@@ -16,13 +16,21 @@ object DemoExamples  {
   }
 
   def drawStuff(ctx: CanvasRenderingContext2D) {
+
+    val (h, w) = (ctx.canvas.height, ctx.canvas.width)
     var x = 0.0
 
     dom.setInterval(() => {
-      x = x + 1
-      ctx.fillStyle = "#FF9900"
-      ctx.fillRect(x, 100, 30, 30)
+      x = (x + 1) % w
+
+      if (x == 0) ctx.clearRect(0, 0, w, h)
+      else {
+        val y = sin(x/w * 100) * h/40 + 200
+        ctx.fillStyle = "#FF9900"
+        ctx.fillRect(x, y, 3, 3)
+      }
     }, 10)
+
   }
 
   def resizeCanvas(ctx: CanvasRenderingContext2D) = {
